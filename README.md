@@ -1,4 +1,13 @@
 # ExpressJs exercise
+This exercise is about express JS which is a web application framwork for node.js.
+
+## Project setup [already done for this template]
+### Creating package.json
+-npm init -y
+This creates a basic package.json containing the dependencies and devDependencies.
+
+### Installing express js
+- npm install express --save
 
 ## Template structure
 - View: home.pug in the views folder which appear at root url localhost:3000/
