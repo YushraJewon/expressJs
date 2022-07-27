@@ -3,7 +3,7 @@ This exercise is about express JS which is a web application framwork for node.j
 
 ## Project setup [already done for this template]
 ### Creating package.json
--npm init -y
+- npm init -y
 This creates a basic package.json containing the dependencies and devDependencies.
 
 ### Installing express js
