@@ -2,9 +2,11 @@ head
   link(rel="stylesheet" href="/css/bootstrap.min.css")
   link(rel="stylesheet" href="/css/bootstrap-icons.css")
 
-body(class="bg-light p-4")
-  div(class="container text-center mb-3 fs-1") #{name}
-  div(class="shadow-lg rounded-3 p-3")
+body(class="bg-light p-4")      
+  div(class="container-fluid mb-3 fs-1") 
+    span #{name}
+      img(src="/images/movies.svg", height="200px")
+  div(class="shadow-lg rounded-3 p-3 mb-4")
     table(class="table table-borderless table-light table-hover align-middle")
       tr(class="table-success")
         th(class="fs-5") Name
@@ -12,12 +14,24 @@ body(class="bg-light p-4")
         th(class="fs-5") Year
         th Edit
           
-        each movie in movies
-          tr
-            td= movie.name
-            td= movie.genre
-            td= movie.year
-            td
-              button.btn.btn-primary(type="button")
-                i.bi.bi-pencil
-              
+      each movie in movies
+        tr
+          td= movie.name
+          td= movie.genre
+          td= movie.year
+          td
+            button.btn.btn-primary(type="button")
+              i.bi.bi-pencil
+  div.container
+    div.d-flex.justify-content-center
+      .col-md-6 
+        nav(aria-label='...')
+          ul.pagination.pagination-lg
+            each pagination in paginations
+              if pagination.page == active
+                li.page-item.active(aria-current="page")
+                  a.page-link(href=`/?page=${pagination.page}`) #{pagination.key}
+              else
+                  li.page-item
+                    a.page-link(href=`/?page=${pagination.page}`) #{pagination.key}
+                     
